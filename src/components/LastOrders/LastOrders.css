@@ -1,0 +1,413 @@
+.last-orders {
+  background: var(--bg-surface);
+  border-radius: 20px;
+  padding: 22px 24px 16px 24px;
+  margin-top: 20px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* Add transaction button (admin only) */
+.lo-add-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 16px;
+  border: none;
+  border-radius: 50px;
+  background: #5240d8;
+  color: #fff;
+  font-family: var(--font-family);
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.lo-add-btn:hover {
+  background: #3d2eb8;
+}
+
+.lo-add-btn:active {
+  transform: scale(0.97);
+}
+
+/* Export CSV button */
+.lo-export-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 16px;
+  border: 1px solid #d0d0d0;
+  border-radius: 50px;
+  background: var(--bg-surface);
+  color: var(--text-heading);
+  font-family: var(--font-family);
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.lo-export-btn:hover:not(:disabled) {
+  background: #f0f0ec;
+  border-color: #b0b0b0;
+}
+
+.lo-export-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Header ──────────────────────────────── */
+.lo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.lo-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.lo-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* (Removed lo-filter from header as it's now in control bar) */
+
+.lo-update-note {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  padding: 6px 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+.lo-view-all-btn {
+  font-family: var(--font-family);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  background: transparent;
+  border: 1px solid #d0d0d0;
+  border-radius: 50px;
+  padding: 6px 16px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.lo-view-all-btn:hover {
+  background: #f0f0ec;
+  border-color: #b0b0b0;
+}
+
+/* ── Control Bar ─────────────────────────── */
+.lo-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding: 12px;
+  background: var(--bg-surface-alt);
+  border-radius: 12px;
+  border: 1px solid var(--border-faint);
+}
+
+.lo-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: 50px;
+  padding: 8px 16px;
+  min-width: 260px;
+  transition: border-color 0.15s ease;
+}
+
+.lo-search:focus-within {
+  border-color: var(--border-strong);
+}
+
+.lo-search-icon {
+  color: var(--text-muted);
+}
+
+.lo-search-input {
+  border: none;
+  outline: none;
+  font-family: var(--font-family);
+  font-size: 0.8rem;
+  color: var(--text-heading);
+  width: 100%;
+  background: transparent;
+}
+
+.lo-search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.lo-filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lo-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: 50px;
+  padding: 2px 4px 2px 14px;
+}
+
+.lo-filter-icon {
+  color: var(--text-muted);
+}
+
+.lo-select {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: var(--font-family);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-heading);
+  padding: 6px 8px 6px 4px;
+  cursor: pointer;
+}
+
+/* ── Table ────────────────────────────────── */
+.lo-table-wrap {
+  overflow-x: auto;
+}
+
+.lo-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 6px;          /* vertical gap between rows */
+}
+
+/* Header cells */
+.lo-th {
+  text-align: left;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0 14px 6px 14px;
+  border: none;
+  white-space: nowrap;
+}
+
+/* ── Table rows ──────────────────────────── */
+.lo-row {
+  background: var(--bg-surface-alt);
+  border-radius: 14px;
+  transition: box-shadow 0.15s ease;
+}
+
+.lo-row:hover {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* Rounded corners on first/last cells */
+.lo-row td:first-child { border-radius: 14px 0 0 14px; }
+.lo-row td:last-child  { border-radius: 0 14px 14px 0; }
+
+/* ── Table cells ─────────────────────────── */
+.lo-td {
+  padding: 12px 14px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-heading);
+  border: none;
+  white-space: nowrap;
+}
+
+/* Name cell */
+.lo-td--name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lo-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+
+/* Amount cell */
+.lo-amt-income {
+  color: #3b8e62;
+  font-weight: 600;
+}
+
+.lo-amt-expense {
+  color: #e05c5c;
+  font-weight: 600;
+}
+
+/* Status cell */
+.lo-td--status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.lo-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Date cell */
+.lo-td--date {
+  color: var(--text-body);
+}
+
+/* ── Empty State ─────────────────────────── */
+.lo-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: var(--bg-surface-alt);
+  border-radius: 14px;
+  margin-top: 10px;
+  text-align: center;
+  border: 1px dashed #e0e0e0;
+}
+
+.lo-empty-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.lo-empty-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 6px;
+}
+
+.lo-empty-desc {
+  font-size: 0.82rem;
+  color: var(--text-body);
+  max-width: 320px;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.lo-empty-clear {
+  background: var(--bg-surface);
+  border: 1px solid #d0d0d0;
+  border-radius: 50px;
+  padding: 8px 20px;
+  font-family: var(--font-family);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.lo-empty-clear:hover {
+  background: #f0f0ec;
+  border-color: #b0b0b0;
+}
+
+/* Actions group (admin only) */
+.lo-td-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lo-edit-btn,
+.lo-delete-btn {
+  background: none;
+  border: 1px solid #e8e0e0;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.lo-edit-btn {
+  color: var(--text-body);
+}
+
+.lo-edit-btn:hover {
+  background: #f0f0ec;
+  color: var(--text-heading);
+  border-color: #b0b0b8;
+}
+
+.lo-delete-btn {
+  color: #c0a0a0;
+}
+
+.lo-delete-btn:hover {
+  background: #fde8e8;
+  color: #e05c5c;
+  border-color: #e05c5c;
+}
+
+@media (max-width: 768px) {
+  .last-orders {
+    padding: 16px;
+  }
+  .lo-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .lo-search, .lo-filters {
+    width: 100%;
+  }
+  .lo-search {
+    min-width: 0;
+  }
+  .lo-filters {
+    flex-wrap: wrap;
+  }
+}

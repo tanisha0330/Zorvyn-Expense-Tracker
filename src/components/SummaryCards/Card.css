@@ -1,0 +1,76 @@
+.summary-card {
+  flex: 1;
+  min-width: 160px;
+  border-radius: 20px;
+  padding: 18px 18px 0 18px;      /* no bottom padding — wave fills it */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  min-height: 150px;
+}
+
+/* ── Top row ──────────────────────────── */
+.card-top-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.card-icon {
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 8px;
+  padding: 4px 7px;
+  line-height: 1;
+  font-weight: 600;
+  color: #3a3a3a;
+}
+
+.card-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(28, 28, 30, 0.6);
+  letter-spacing: 0.03em;
+}
+
+.card-badge {
+  margin-left: auto;
+  background: rgba(255, 255, 255, 0.55);
+  color: #3a6a3a;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+}
+
+/* ── Main value ───────────────────────── */
+.card-value {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #1c1c1e;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+/* ── Custom body (Upgrade card) ───────── */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  padding-bottom: 16px;
+}
+
+/* ── Wave SVG ─────────────────────────── */
+.card-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  pointer-events: none;
+}

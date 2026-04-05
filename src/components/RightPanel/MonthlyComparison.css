@@ -1,0 +1,82 @@
+.monthly-comparison {
+  background: var(--bg-surface);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+}
+
+.mc-header {
+  margin-bottom: 8px;
+}
+
+.mc-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.mc-desc {
+  font-size: 0.72rem;
+  color: var(--text-body);
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.mc-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  background: var(--bg-surface-alt);
+  border-radius: 12px;
+  padding: 12px 16px;
+  border: 1px solid var(--border-faint);
+}
+
+.mc-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mc-stat-label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.mc-stat-value {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  letter-spacing: -0.02em;
+}
+
+.mc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 50px;
+}
+
+.mc-badge--positive {
+  background: #d8e8c8;
+  color: #3b8e62;
+}
+
+.mc-badge--negative {
+  background: #fde8e8;
+  color: #e05c5c;
+}
+
+.mc-badge--neutral {
+  background: #f0f0ec;
+  color: var(--text-body);
+}
+
+.mc-badge-text {
+  font-size: 0.78rem;
+  font-weight: 700;
+}

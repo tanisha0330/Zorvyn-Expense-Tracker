@@ -1,0 +1,50 @@
+.summary-cards {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* ── Upgrade card specific ─────────────── */
+.upgrade-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #2a2060;
+  margin-bottom: 4px;
+}
+
+.upgrade-sub {
+  font-size: 0.76rem;
+  color: rgba(42, 32, 96, 0.65);
+  line-height: 1.45;
+  flex: 1;
+}
+
+.go-pro-btn {
+  align-self: flex-start;
+  background: #5240d8;
+  color: #fff;
+  border: none;
+  padding: 8px 22px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-family);
+  letter-spacing: 0.02em;
+  transition: background 0.18s ease, transform 0.12s ease;
+}
+
+.go-pro-btn:hover {
+  background: #3d2eb8;
+  transform: translateY(-1px);
+}
+
+.go-pro-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .summary-cards {
+    flex-direction: column;
+  }
+}

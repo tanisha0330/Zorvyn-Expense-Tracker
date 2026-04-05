@@ -1,0 +1,42 @@
+.right-panel {
+  width: 280px;
+  min-width: 280px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 28px 20px 28px 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.right-panel::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .right-panel {
+    width: 100%;
+    height: auto;
+    min-width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 20px 24px 20px;
+    align-items: flex-start;
+  }
+  
+  .right-panel > * {
+    flex: 1;
+    min-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .right-panel {
+    padding: 0 16px 20px 16px;
+    flex-direction: column;
+  }
+  .right-panel > * {
+    min-width: 100%;
+  }
+}
