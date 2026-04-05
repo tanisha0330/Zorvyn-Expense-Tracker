@@ -2,7 +2,9 @@
 
 Zorvyn is a high-fidelity, component-based React dashboard application. Designed with a custom aesthetic and smooth micro-animations, it serves as a lightweight, robust interface for managing and visualizing financial transactions, tracking recent sales, and reporting monthly metrics.
 
-![Zorvyn Dashboard Demo](./demo.webp)
+![Zorvyn Dashboard Demo](./display/ss.png)
+![Zorvyn Dashboard Demo](./display/ss2.png)
+![Zorvyn Dashboard Demo](./display/ss3.png)
 
 ## Key Features
 
